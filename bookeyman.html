@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Bookeyman</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+  <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"> </script>
+</head>
+<body>
+  <div class="container-fluid">
+  <div class = "row text-center">
+    <h2>Cat Photo Finder</h2>
+  </div>
+  <div class = "row text-center">
+    <div class = "col-xs-12 well message">
+      The message will go here
+    </div>
+  </div>
+  <div class = "row text-center">
+    <div class = "col-xs-12">
+      <button id = "getMessage" class = "btn btn-primary">
+        Get Message
+      </button>
+    </div>
+  </div>
+</div>
+</body>
+
+<script>
+  $(document).ready(function() {
+
+    $("#getMessage").on("click", function(){
+      // Only change code below this line.
+      $.getJSON("/app/utils/jsonOdds.js", function(json) {
+  $(".message").html(JSON.stringify(json));
+});
+      
+      
+      // Only change code above this line.
+    });
+
+  });
+</script>
+
+</html>

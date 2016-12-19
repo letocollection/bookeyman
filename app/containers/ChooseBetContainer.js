@@ -1,5 +1,6 @@
 var React = require('react');
 var ChooseBet = require('../components/ChooseBet');
+var jsonOdds = require('../utils/jsonOdds');
 
 var ChooseBetContainer = React.createClass({
   contextTypes: {
@@ -13,8 +14,10 @@ var ChooseBetContainer = React.createClass({
   },
   componentDidMount: function () {
     var query = this.props.location.query;
-    console.log(query);
-    //this is where we are going to fetch the games, then update state.
+    jsonOdds.getGames().
+    then(function(){
+      console.log(response.data);
+    });
   },
   render: function() {
     return (
