@@ -1,17 +1,15 @@
 {
-  "name": "bookeyman",
+  "name": "complete-intro-to-react",
   "version": "1.0.0",
-  "description": "Letting the average person become a bookey",
+  "description": "A two day workshop on a complete intro to React",
   "main": "index.js",
   "scripts": {
-    "test": "mocha --require test/helpers/setup.js",
-    "lint": "standard",
+    "test": "standard",
     "build": "webpack",
-    "watch": "webpack --watch",
-    "cover": "nyc --reporter=lcov --reporter=text --reporter=html --require babel-register --extension .jsx npm test"
+    "watch": "webpack --watch"
   },
-  "author": "Leonard Oh <leonard@letocollection.com>",
-  "license": "none",
+  "author": "Brian Holt <btholt@gmail.com>",
+  "license": "MIT",
   "dependencies": {
     "axios": "0.9.1",
     "express": "4.13.4",
@@ -25,7 +23,6 @@
   "devDependencies": {
     "babel-core": "^6.5.2",
     "babel-loader": "^6.2.2",
-    "babel-polyfill": "6.7.4",
     "babel-preset-es2015": "^6.5.0",
     "babel-preset-react": "^6.5.0",
     "babel-register": "^6.5.2",
@@ -52,6 +49,16 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/letocollection/bookeyman.git"
+    "url": "git+https://github.com/btholt/complete-intro-to-react.git"
   },
+  "keywords": [
+    "react",
+    "workshop",
+    "intro",
+    "redux"
+  ],
+  "bugs": {
+    "url": "https://github.com/btholt/complete-intro-to-react/issues"
+  },
+  "homepage": "https://github.com/btholt/complete-intro-to-react#readme"
 }
