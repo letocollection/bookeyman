@@ -1,21 +1,37 @@
-var path = require('path');
-var webpack = require('webpack');
+const path = require('path')
 
 module.exports = {
-  entry: [
-    './src/app'
-  ],
-  devtool: 'eval-source-map',
+  context: __dirname,
+  entry: './js/BrowserEntry.jsx',
   output: {
-    path: __dirname,
-    filename: 'app.js',
-    publicPath: '/js/'
+    path: path.join(__dirname, '/public'),
+    filename: 'bundle.js'
+  },
+  resolve: {
+    extensions: ['', '.js', '.jsx', '.json']
+  },
+  stats: {
+    colors: true,
+    reasons: true,
+    chunks: false
   },
   module: {
-    loaders: [{
-    test: /\.js$/,
-    loaders: ['babel'],
-    include: path.join(__dirname, 'src')
-  }]
+    preLoaders: [
+      {
+        test: /\.jsx?$/,
+        loader: "eslint-loader",
+        exclude: /node_modules/
+      }
+    ],
+    loaders: [
+      {
+        test: /\.jsx?$/,
+        loader: 'babel-loader'
+      },
+      {
+        test: /\.json$/,
+        loader: 'json-loader'
+      }
+    ]
   }
-};
+}
