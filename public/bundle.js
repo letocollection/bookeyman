@@ -45470,6 +45470,7 @@
 	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
 	var React = __webpack_require__(1);
+	var Header = __webpack_require__(384);
 
 	var Details = function (_React$Component) {
 			_inherits(Details, _React$Component);
@@ -45491,15 +45492,7 @@
 					return React.createElement(
 							'div',
 							{ className: 'container' },
-							React.createElement(
-									'header',
-									{ className: 'header' },
-									React.createElement(
-											'h1',
-											{ className: 'brand' },
-											'svideo'
-									)
-							),
+							React.createElement(Header, null),
 							React.createElement(
 									'div',
 									{ className: 'video-info' },
@@ -45713,6 +45706,51 @@
 			}
 		]
 	};
+
+/***/ },
+/* 384 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var React = __webpack_require__(1);
+
+	var _require = __webpack_require__(160),
+	    Link = _require.Link;
+
+	var Header = React.createClass({
+	  displayName: 'Header',
+	  render: function render() {
+	    var utilSpace = void 0;
+	    if (this.props.showSearch) {
+	      utilSpace = React.createElement('input', { type: 'text', className: 'search-input', placeholer: 'search', value: this.props.searchTerm, onChange: this.props.handleSearchTerm });
+	    } else {
+	      utilSpace = React.createElement(
+	        'h2',
+	        { className: 'header-back' },
+	        React.createElement(
+	          Link,
+	          { to: '/search' },
+	          'Back'
+	        )
+	      );
+	    }
+	    return React.createElement(
+	      'header',
+	      { className: 'header' },
+	      React.createElement(
+	        'h1',
+	        { className: 'brand' },
+	        React.createElement(
+	          Link,
+	          { to: '/', className: 'brand-link' },
+	          'Bookeyman'
+	        )
+	      ),
+	      utilSpace
+	    );
+	  }
+	});
+
+	module.exports = Header;
 
 /***/ }
 /******/ ]);
