@@ -110,7 +110,7 @@ a > .show-card {
   border: 2px solid #333;
   border-radius: 4px;
   text-align: left;
-  width: 90%;
+  width: 50%;
   height: 0;
   padding-bottom: 19.8%;
   overflow: hidden;
@@ -133,7 +133,7 @@ a > .show-card {
   display: block;
   float: right;
   text-align: center;
-  /*width: auto;*/
+  width: 20%;
   overflow-y: scroll;
 }
 
