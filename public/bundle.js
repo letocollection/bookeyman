@@ -48,6 +48,7 @@
 	var ReactDOM = __webpack_require__(158);
 	var Landing = __webpack_require__(159);
 	var Search = __webpack_require__(223);
+	var Bets = __webpack_require__(225);
 
 	var _require = __webpack_require__(160),
 	    Router = _require.Router,
@@ -59,7 +60,8 @@
 	    Router,
 	    { history: hashHistory },
 	    React.createElement(Route, { path: '/', component: Landing }),
-	    React.createElement(Route, { path: '/search', component: Search })
+	    React.createElement(Route, { path: '/search', component: Search }),
+	    React.createElement(Route, { path: '/bets', component: Bets })
 	  );
 	};
 
@@ -25759,45 +25761,77 @@
 /***/ function(module, exports, __webpack_require__) {
 
 	var React = __webpack_require__(1);
+	var Bets = __webpack_require__(225);
 	var data = __webpack_require__(224);
 
-	var Search = function Search() {
-	  return React.createElement(
-	    'div',
-	    { className: 'container' },
-	    data.data.map(function (data) {
-	      return React.createElement(
-	        'div',
-	        { className: 'show-card' },
-	        React.createElement('img', { src: 'public/images/' + data.HomeROT, className: 'show-card-img' }),
-	        React.createElement('img', { src: 'public/images/' + data.AwayROT, className: 'show-card-img2' }),
+	var Search = React.createClass({
+	  displayName: 'Search',
+	  getInitialState: function getInitialState() {
+	    return {
+	      searchTerm: ''
+	    };
+	  },
+	  handleSearchTermEvent: function handleSearchTermEvent(event) {
+	    this.setState({ searchTerm: event.target.value });
+	  },
+	  render: function render() {
+	    var _this = this;
+
+	    return React.createElement(
+	      'div',
+	      { className: 'container' },
+	      React.createElement(
+	        'header',
+	        { className: 'header' },
 	        React.createElement(
+	          'h1',
+	          { className: 'brand' },
+	          'Current UFC Betting Lines'
+	        ),
+	        React.createElement(
+	          'h2',
+	          { className: 'brand' },
+	          'Bookeyman'
+	        ),
+	        React.createElement('input', { value: this.state.searchTerm, className: 'search-input', type: 'text', placeholder: 'Search', onChange: this.handleSearchTermEvent })
+	      ),
+	      data.data.filter(function (data) {
+	        return (data.HomeTeam + ' ' + data.AwayTeam).toUpperCase().indexOf(_this.state.searchTerm.toUpperCase()) >= 0;
+	      }).map(function (data) {
+	        return React.createElement(
 	          'div',
-	          { className: 'show-card-text' },
+	          { className: 'show-card' },
+	          React.createElement('img', { src: 'public/images/' + data.HomeROT, className: 'show-card-img' }),
+	          React.createElement('img', { src: 'public/images/' + data.AwayROT, className: 'show-card-img2' }),
 	          React.createElement(
-	            'h3',
-	            null,
-	            data.HomeTeam,
-	            ' vs ',
-	            data.AwayTeam
+	            'div',
+	            { className: 'show-card-text' },
+	            React.createElement(
+	              'h3',
+	              null,
+	              data.HomeTeam,
+	              ' vs ',
+	              data.AwayTeam
+	            ),
+	            React.createElement(
+	              'h3',
+	              null,
+	              'Date: ',
+	              data.MatchTime
+	            ),
+	            React.createElement(
+	              'h3',
+	              null,
+	              'Odds: ',
+	              data.Odds
+	            )
 	          ),
-	          React.createElement(
-	            'h3',
-	            null,
-	            'Date: ',
-	            data.MatchTime
-	          ),
-	          React.createElement(
-	            'h3',
-	            null,
-	            'Odds: ',
-	            data.Odds
-	          )
-	        )
-	      );
-	    })
-	  );
-	};
+	          React.createElement(Bets, null)
+	        );
+	      })
+	    );
+	  }
+	});
 
 	module.exports = Search;
 
@@ -25812,8 +25846,8 @@
 				"HomeTeam": "Tito Ortiz",
 				"AwayTeam": "Chael Sonnen",
 				"Sport": 11,
-				"MatchTime": "2017-01-22T02:00:00",
-				"Odds": 120,
+				"MatchTime": "January 22, 2017",
+				"Odds": "-149/+121",
 				"Details": null,
 				"HomeROT": "titoortiz.jpg",
 				"AwayROT": "chaelsonnen.jpg"
@@ -25823,8 +25857,8 @@
 				"HomeTeam": "Francis Ngannou",
 				"AwayTeam": "Andrei Arlovski",
 				"Sport": 11,
-				"MatchTime": "2017-01-29T04:00:00",
-				"Odds": 120,
+				"MatchTime": "January 29, 2017",
+				"Odds": "-335/+265",
 				"Details": null,
 				"HomeROT": "francisngannou.jpg",
 				"AwayROT": "andreiarlovski.jpg"
@@ -25834,8 +25868,8 @@
 				"HomeTeam": "Valentina Shevchenko",
 				"AwayTeam": "Julianna Pena",
 				"Sport": 11,
-				"MatchTime": "2017-01-29T04:00:00",
-				"Odds": 120,
+				"MatchTime": "January 29, 2017",
+				"Odds": "-144/+116",
 				"Details": null,
 				"HomeROT": "valentinashevchenko.jpg",
 				"AwayROT": "juliannapena.jpg"
@@ -25845,8 +25879,8 @@
 				"HomeTeam": "Sam Alvey",
 				"AwayTeam": "Nate Marquardt",
 				"Sport": 11,
-				"MatchTime": "2017-01-29T04:00:00",
-				"Odds": 120,
+				"MatchTime": "January 29, 2017",
+				"Odds": "-179/+151",
 				"Details": null,
 				"HomeROT": "samalvey.jpg",
 				"AwayROT": "natemarquardt.jpg"
@@ -25856,8 +25890,8 @@
 				"HomeTeam": "Jason Knight",
 				"AwayTeam": "Alex Caceres",
 				"Sport": 11,
-				"MatchTime": "2017-01-29T04:00:00",
-				"Odds": 120,
+				"MatchTime": "January 29, 2017",
+				"Odds": "-149/+121",
 				"Details": null,
 				"HomeROT": "jasonknight.jpg",
 				"AwayROT": "alexcaceres.jpg"
@@ -25867,8 +25901,8 @@
 				"HomeTeam": "Donald Cerrone",
 				"AwayTeam": "Jorge Masvidal",
 				"Sport": 11,
-				"MatchTime": "2017-01-29T04:00:00",
-				"Odds": 120,
+				"MatchTime": "January 29, 2017",
+				"Odds": "-174/+146",
 				"Details": null,
 				"HomeROT": "donaldcerrone.jpg",
 				"AwayROT": "jorgemasvidal.jpg"
@@ -25878,8 +25912,8 @@
 				"HomeTeam": "Tyron Woodley",
 				"AwayTeam": "Stephen Thompson",
 				"Sport": 11,
-				"MatchTime": "2017-03-05T04:00:00",
-				"Odds": 120,
+				"MatchTime": "March 5, 2017",
+				"Odds": "-149/+121",
 				"Details": null,
 				"HomeROT": "tyronwoodley.jpg",
 				"AwayROT": "stephenthompson.jpg"
@@ -25889,14 +25923,59 @@
 				"HomeTeam": "Tony Ferguson",
 				"AwayTeam": "Khabib Numagomedov",
 				"Sport": 11,
-				"MatchTime": "2017-03-05T04:00:00",
-				"Odds": 120,
+				"MatchTime": "March 5, 2017",
+				"Odds": "-149/+121",
 				"Details": null,
 				"HomeROT": "tonyferguson.jpg",
 				"AwayROT": "khabibnumagomedov.jpg"
 			}
 		]
 	};
+
+/***/ },
+/* 225 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var React = __webpack_require__(1);
+
+	var Bets = React.createClass({
+	  displayName: 'Bets',
+	  getInitialState: function getInitialState() {
+	    return {
+	      player: '',
+	      money: ''
+	    };
+	  },
+	  handlePlayer: function handlePlayer(P) {
+	    this.setState({ player: P.target.value });
+	  },
+	  wagerMoney: function wagerMoney(M) {
+	    this.setState({ money: M.target.value });
+	  },
+	  render: function render() {
+	    return React.createElement(
+	      'div',
+	      { className: 'bets' },
+	      React.createElement('input', { value: this.state.player, className: 'search-input', type: 'text', placeholder: 'Player', onChange: this.handlePlayer }),
+	      React.createElement('input', { value: this.state.money, className: 'search-input', type: 'text', placeholder: 'Wager', onChange: this.wagerMoney }),
+	      React.createElement(
+	        'h3',
+	        null,
+	        'Player: ',
+	        this.state.player
+	      ),
+	      React.createElement(
+	        'h3',
+	        null,
+	        '$ ',
+	        this.state.money,
+	        ' Wagered'
+	      )
+	    );
+	  }
+	});
+
+	module.exports = Bets;
 
 /***/ }
 /******/ ]);
