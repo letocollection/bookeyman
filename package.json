@@ -4,7 +4,7 @@
   "description": "A way to record bets from your clients",
   "main": "index.js",
   "scripts": {
-    "test": "standard",
+    "start": "webpack",
     "build": "webpack",
     "watch": "webpack --watch"
   },
