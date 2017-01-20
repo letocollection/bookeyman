@@ -48,7 +48,7 @@
 	var ReactDOM = __webpack_require__(158);
 	var Landing = __webpack_require__(159);
 	var Search = __webpack_require__(223);
-	var Bets = __webpack_require__(225);
+	var Bets = __webpack_require__(224);
 
 	var _require = __webpack_require__(160),
 	    Router = _require.Router,
@@ -19826,13 +19826,12 @@
 	      React.createElement(
 	        'h1',
 	        { className: 'title' },
-	        'svideo'
+	        'UFC Betting Odds'
 	      ),
-	      React.createElement('input', { className: 'search', type: 'text', placeholder: 'Search' }),
 	      React.createElement(
 	        Link,
 	        { to: '/search', className: 'browse-all' },
-	        ' or Browse All'
+	        'Record Bets'
 	      )
 	    )
 	  );
@@ -25761,8 +25760,8 @@
 /***/ function(module, exports, __webpack_require__) {
 
 	var React = __webpack_require__(1);
-	var Bets = __webpack_require__(225);
-	var data = __webpack_require__(224);
+	var Bets = __webpack_require__(224);
+	var data = __webpack_require__(225);
 
 	var Search = React.createClass({
 	  displayName: 'Search',
@@ -25837,6 +25836,51 @@
 
 /***/ },
 /* 224 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var React = __webpack_require__(1);
+
+	var Bets = React.createClass({
+	  displayName: 'Bets',
+	  getInitialState: function getInitialState() {
+	    return {
+	      player: '',
+	      money: ''
+	    };
+	  },
+	  handlePlayer: function handlePlayer(P) {
+	    this.setState({ player: P.target.value });
+	  },
+	  wagerMoney: function wagerMoney(M) {
+	    this.setState({ money: M.target.value });
+	  },
+	  render: function render() {
+	    return React.createElement(
+	      'div',
+	      { className: 'bets' },
+	      React.createElement('input', { value: this.state.player, className: 'search-input', type: 'text', placeholder: 'Player', onChange: this.handlePlayer }),
+	      React.createElement('input', { value: this.state.money, className: 'search-input', type: 'text', placeholder: 'Wager', onChange: this.wagerMoney }),
+	      React.createElement(
+	        'h3',
+	        null,
+	        'Player: ',
+	        this.state.player
+	      ),
+	      React.createElement(
+	        'h3',
+	        null,
+	        '$ ',
+	        this.state.money,
+	        ' Wagered'
+	      )
+	    );
+	  }
+	});
+
+	module.exports = Bets;
+
+/***/ },
+/* 225 */
 /***/ function(module, exports) {
 
 	module.exports = {
@@ -25931,51 +25975,6 @@
 			}
 		]
 	};
-
-/***/ },
-/* 225 */
-/***/ function(module, exports, __webpack_require__) {
-
-	var React = __webpack_require__(1);
-
-	var Bets = React.createClass({
-	  displayName: 'Bets',
-	  getInitialState: function getInitialState() {
-	    return {
-	      player: '',
-	      money: ''
-	    };
-	  },
-	  handlePlayer: function handlePlayer(P) {
-	    this.setState({ player: P.target.value });
-	  },
-	  wagerMoney: function wagerMoney(M) {
-	    this.setState({ money: M.target.value });
-	  },
-	  render: function render() {
-	    return React.createElement(
-	      'div',
-	      { className: 'bets' },
-	      React.createElement('input', { value: this.state.player, className: 'search-input', type: 'text', placeholder: 'Player', onChange: this.handlePlayer }),
-	      React.createElement('input', { value: this.state.money, className: 'search-input', type: 'text', placeholder: 'Wager', onChange: this.wagerMoney }),
-	      React.createElement(
-	        'h3',
-	        null,
-	        'Player: ',
-	        this.state.player
-	      ),
-	      React.createElement(
-	        'h3',
-	        null,
-	        '$ ',
-	        this.state.money,
-	        ' Wagered'
-	      )
-	    );
-	  }
-	});
-
-	module.exports = Bets;
 
 /***/ }
 /******/ ]);
