@@ -1,0 +1,84 @@
+{
+  "data": [{
+    "ID": "40fa4982-3f8d-40a9-95a8-c5872ec42c40",
+    "HomeTeam": "Tito Ortiz",
+    "AwayTeam": "Chael Sonnen",
+    "Sport": 11,
+    "MatchTime": "January 22, 2017",
+    "Odds": "-149/+121",
+    "Details": null,
+    "HomeROT": "titoortiz.jpg",
+    "AwayROT": "chaelsonnen.jpg"
+}, {
+    "ID": "60f25985-9f25-467f-a748-dd24457cf6d5",
+    "HomeTeam": "Francis Ngannou",
+    "AwayTeam": "Andrei Arlovski",
+    "Sport": 11,
+    "MatchTime": "January 29, 2017",
+    "Odds": "-335/+265",
+    "Details": null,
+    "HomeROT": "francisngannou.jpg",
+    "AwayROT": "andreiarlovski.jpg"
+}, {
+    "ID": "62fa38b5-7d24-490c-bd9b-5f06c0af3f25",
+    "HomeTeam": "Valentina Shevchenko",
+    "AwayTeam": "Julianna Pena",
+    "Sport": 11,
+    "MatchTime": "January 29, 2017",
+    "Odds": "-144/+116",
+    "Details": null,
+    "HomeROT": "valentinashevchenko.jpg",
+    "AwayROT": "juliannapena.jpg"
+}, {
+    "ID": "7f2f54ef-c48d-434e-a5c1-b186eaa0efce",
+    "HomeTeam": "Sam Alvey",
+    "AwayTeam": "Nate Marquardt",
+    "Sport": 11,
+    "MatchTime": "January 29, 2017",
+    "Odds": "-179/+151",
+    "Details": null,
+    "HomeROT": "samalvey.jpg",
+    "AwayROT": "natemarquardt.jpg"
+}, {
+    "ID": "90ce018c-7cfa-42e6-8c4e-b46dddbcd6ba",
+    "HomeTeam": "Jason Knight",
+    "AwayTeam": "Alex Caceres",
+    "Sport": 11,
+    "MatchTime": "January 29, 2017",
+    "Odds": "-149/+121",
+    "Details": null,
+    "HomeROT": "jasonknight.jpg",
+    "AwayROT": "alexcaceres.jpg"
+}, {
+    "ID": "e066d790-1e85-4c64-81ca-9a6bf726787f",
+    "HomeTeam": "Donald Cerrone",
+    "AwayTeam": "Jorge Masvidal",
+    "Sport": 11,
+    "MatchTime": "January 29, 2017",
+    "Odds": "-174/+146",
+    "Details": null,
+    "HomeROT": "donaldcerrone.jpg",
+    "AwayROT": "jorgemasvidal.jpg"
+}, {
+    "ID": "406c29fb-a6a7-4c94-888e-c3de9374d81e",
+    "HomeTeam": "Tyron Woodley",
+    "AwayTeam": "Stephen Thompson",
+    "Sport": 11,
+    "MatchTime": "March 5, 2017",
+    "Odds": "-149/+121",
+    "Details": null,
+    "HomeROT": "tyronwoodley.jpg",
+    "AwayROT": "stephenthompson.jpg"
+}, {
+    "ID": "a58d1158-689f-4a48-8b80-ac5d4b184137",
+    "HomeTeam": "Tony Ferguson",
+    "AwayTeam": "Khabib Numagomedov",
+    "Sport": 11,
+    "MatchTime": "March 5, 2017",
+    "Odds": "-149/+121",
+    "Details": null,
+    "HomeROT": "tonyferguson.jpg",
+    "AwayROT": "khabibnumagomedov.jpg"
+}]
+
+}
