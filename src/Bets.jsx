@@ -14,16 +14,15 @@ const Bets = React.createClass({
     this.setState({ money: M.target.value })
   },
   render () {
-  	return (
-  	  <div className='bets'>
+    return (
+      <div className='bets'>
         <input value={this.state.player} className='search-input' type='text' placeholder='Player' onChange={this.handlePlayer} />
         <input value={this.state.money} className='search-input' type='text' placeholder='Wager' onChange={this.wagerMoney} />
           <h3>Player: {this.state.player}</h3>
           <h3>$ {this.state.money} Wagered</h3>
       </div>
-  	)
+    )
   }
 })
 
 module.exports = Bets
-
