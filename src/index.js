@@ -2,7 +2,7 @@ const React = require('react')
 const ReactDOM = require('react-dom')
 const Landing = require('./Landing')
 const Search = require('./Search')
-const Bets = require('./Bets')
+const RecordBets = require('./RecordBets')
 const Database = require('./Database')
 const Chatroom = require('./Chatroom')
 const { Router, Route, hashHistory } = require('react-router')
@@ -22,7 +22,7 @@ const App = () => (
   <Router history={hashHistory}>
     <Route path='/' component={Landing} />
     <Route path='/search' component={Search} />
-    <Route path='/bets' component={Bets} />
+    <Route path='/recordbets' component={RecordBets} />
     <Route path='/database' component={Database} />
     <Route path='/chat' component={Chatroom} />
   </Router>

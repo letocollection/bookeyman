@@ -1,5 +1,5 @@
 const React = require('react')
-const Bets = require('./Bets')
+const RecordBets = require('./RecordBets')
 const data = require('../public/data')
 
 const Search = React.createClass({
@@ -30,7 +30,7 @@ const Search = React.createClass({
                 <h3>Date: {data.MatchTime}</h3>
                 <h3>Odds: {data.Odds}</h3>
               </div>
-              <Bets />
+              <RecordBets />
             </div>
         ))}
       </div>
