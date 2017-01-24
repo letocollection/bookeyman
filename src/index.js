@@ -15,8 +15,8 @@ const config = {
   storageBucket: "bookeyman-f68c9.appspot.com",
   messagingSenderId: "342171387632"
 };
-firebase.initializeApp(config);
 
+firebase.initializeApp(config);
 
 const App = () => (
   <Router history={hashHistory}>

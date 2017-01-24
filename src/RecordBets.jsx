@@ -1,29 +1,70 @@
 import React, { Component } from 'react'
-const { Link } = require('react-router')
+import * as firebase from 'firebase';
 
-const RecordBets = React.createClass({
-  getInitialState () {
-    return {
-      player: '',
-      money: ''
-    }
-  },
-  handlePlayer (P) {
-    this.setState({ player: P.target.value })
-  },
-  wagerMoney (M) {
-    this.setState({ money: M.target.value })
-  },
-  render () {
-  	return (
-  	  <div className='bets'>
-        <input value={this.state.player} className='search-input' type='text' placeholder='Player' onChange={this.handlePlayer} />
-        <input value={this.state.money} className='search-input' type='text' placeholder='Wager' onChange={this.wagerMoney} />
-          <h3>Player: {this.state.player}</h3>
-          <h3>$ {this.state.money} Wagered</h3>
-      </div>
-  	)
-  }
-})
+class RecordBets extends React.Component {
+	constructor(props, context) {
+		super(props, context)
+		this.recordPlayer = this.recordPlayer.bind(this)
+		this.recordWager = this.recordWager.bind(this)
+		this.confirmBet = this.confirmBet.bind(this)
+			this.state = {
+				confirmedPlayer: '',
+				confirmedWager: '',
+				confirmedBets: []
+			}
+		
+	}
+
+
+	componentDidMount(){
+		firebase.database().ref('confirmedBets/').on('value', (snapshot)=>{
+			
+			const activeBets = snapshot.val()
+
+			if(activeBets != null){
+				this.setState({
+					confirmedBets: activeBets
+				})
+			}
+		})
+	}
+
+	recordPlayer(event){
+		this.setState({ confirmedPlayer: event.target.value })
+	}
+
+	recordWager(event){
+		this.setState({ confirmedWager: event.target.value })
+	}
+
+	confirmBet(event){
+		const nextBet = {
+			id: this.state.confirmedBets.length,
+			playerName: this.state.confirmedPlayer,
+			wager: this.state.confirmedWager
+		}
+
+		firebase.database().ref('confirmedBets/' + nextBet.id).set(nextBet)
+	}
+
+	render(){
+		const shownBets = this.state.confirmedBets.map((bet, i) => {
+			return (
+				<h4 key={bet.id}>{bet.playerName} ${bet.wager}</h4>
+			)
+		})
+		return(
+			<div className='bets'>
+        		<input onChange={this.recordPlayer} className='search-input' type='text' placeholder='Player' />
+        		<input onChange={this.recordWager} className='search-input' type='text' placeholder='Wager'  />
+          		<button onClick={this.confirmBet}>Record Bet!</button>
+          		<ol className='show-card-text'>
+          			{shownBets}
+          		</ol>
+      		</div>
+		)	
+	}
+
+}
 
 module.exports = RecordBets
