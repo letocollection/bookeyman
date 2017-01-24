@@ -4,7 +4,6 @@ const Landing = require('./Landing')
 const Search = require('./Search')
 const RecordBets = require('./RecordBets')
 const Database = require('./Database')
-const Chatroom = require('./Chatroom')
 const { Router, Route, hashHistory } = require('react-router')
 import * as firebase from 'firebase';
 
@@ -24,7 +23,6 @@ const App = () => (
     <Route path='/search' component={Search} />
     <Route path='/recordbets' component={RecordBets} />
     <Route path='/database' component={Database} />
-    <Route path='/chat' component={Chatroom} />
   </Router>
 )
 

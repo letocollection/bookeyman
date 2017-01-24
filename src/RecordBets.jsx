@@ -54,12 +54,12 @@ class RecordBets extends React.Component {
 			)
 		})
 		return(
-			<div className='bets'>
+			<div className='show-card-text'>
         		<input onChange={this.recordPlayer} className='search-input' type='text' placeholder='Player' />
         		<input onChange={this.recordWager} className='search-input' type='text' placeholder='Wager'  />
           		<button onClick={this.confirmBet}>Record Bet!</button>
-          		<ol className='show-card-text'>
-          			{shownBets}
+          		<ol>
+          			<h3 className='show-card-text'>{shownBets}</h3>	
           		</ol>
       		</div>
 		)	

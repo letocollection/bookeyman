@@ -29,8 +29,8 @@ const Search = React.createClass({
                 <h3>{data.HomeTeam} vs {data.AwayTeam}</h3>
                 <h3>Date: {data.MatchTime}</h3>
                 <h3>Odds: {data.Odds}</h3>
+                <RecordBets />
               </div>
-              <RecordBets />
             </div>
         ))}
       </div>
