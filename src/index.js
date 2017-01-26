@@ -15,7 +15,7 @@ const config = {
   messagingSenderId: "342171387632"
 };
 
-firebase.initializeApp(config);
+firebase.initializeApp(config)
 
 const App = () => (
   <Router history={hashHistory}>
