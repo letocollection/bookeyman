@@ -6,6 +6,7 @@
     "react-scripts": "0.8.5"
   },
   "dependencies": {
+    "axios": "^0.15.3",
     "firebase": "^3.6.6",
     "react": "^15.4.2",
     "react-dom": "^15.4.2",
@@ -16,5 +17,17 @@
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
-  }
+  },
+  "description": "This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/letocollection/bookeyman.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/letocollection/bookeyman/issues"
+  },
+  "homepage": "https://github.com/letocollection/bookeyman#readme"
 }

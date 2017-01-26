@@ -1,6 +1,7 @@
 const React = require('react')
 const { Link } = require('react-router')
 const { func, bool, string } = React.PropTypes
+
 const Header = React.createClass({
   propTypes: {
     handleSearchTermChange: func,

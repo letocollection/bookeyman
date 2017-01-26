@@ -3,7 +3,7 @@ const ReactDOM = require('react-dom')
 const Landing = require('./Landing')
 const Search = require('./Search')
 const RecordBets = require('./RecordBets')
-const Database = require('./Database')
+const GetOdds = require('./GetOdds')
 const { Router, Route, hashHistory } = require('react-router')
 import * as firebase from 'firebase';
 
@@ -22,7 +22,7 @@ const App = () => (
     <Route path='/' component={Landing} />
     <Route path='/search' component={Search} />
     <Route path='/recordbets' component={RecordBets} />
-    <Route path='/database' component={Database} />
+    <Route path='/getodds' component={GetOdds} />
   </Router>
 )
 
