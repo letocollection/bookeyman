@@ -5,8 +5,12 @@ const axios = require('axios')
 const GetOdds = React.createClass({
 	componentDidMount () {
 		
-		axios.get('http://swapi.co/api/people').then(function(results) {
-			console.log(results)
+		var config = {
+			headers: {'JsonOdds-API-Key': '7b1ba5d7-c3d0-11e6-a4e1-067e79ca11d3'}
+		}
+
+		axios.get('https://jsonodds.com/api/odds/nfl', config).then(function(results){
+			console.log('results' + results)
 		})
 	},
 
